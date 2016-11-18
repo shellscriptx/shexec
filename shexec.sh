@@ -36,7 +36,7 @@ for pkg in ssh sshpass yad sendemail cron; do
 	# Consulta informações do comando e se o retorno for nulo,
 	# imprime mensagem de erro e finaliza o script
 	if ! command -v $pkg &>/dev/null; then
-		echo "shexec: erro: '$pkg' não está instalado." 1>&2; fi
+		echo "shexec: erro: '$pkg' não está instalado." 1>&2; exit 1; fi
 done
 
 export DISPLAY=:0						# Define a identificação do video na chamada de aplicações usando X11 dentro do crontab
